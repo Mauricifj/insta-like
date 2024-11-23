@@ -68,7 +68,7 @@ body {
     margin-right: 1rem;
 }
 
-/* Botão de Login */
+/* Login button */
 .login-btn {
     background-color: black;
     color: var(--secondary-color);
@@ -84,7 +84,7 @@ body {
     color: var(--secondary-color);
 }
 
-/* Link de Cadastro */
+/* Sign up link */
 .signup-link {
     color: var(--primary-color);
     text-decoration: none;
@@ -133,7 +133,7 @@ body {
     font-weight: 500;
 }
 
-/* Grid de Imagens */
+/* Image Grid */
 .image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -205,7 +205,7 @@ body {
     color: var(--secondary-color);
 }
 
-/* Responsividade */
+/* Responsiveness */
 @media (max-width: 480px) {
 
     .navbar .logo {

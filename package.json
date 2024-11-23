@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "alura-node-gemini-frontend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Frontend project to learn Node.js and Gemini with Alura",
   "main": "index.js",
   "type": "module",
   "license": "AGPL-version-3.0",
@@ -15,14 +15,9 @@
     "type": "git",
     "url": ""
   },
-  "bugs": "",
-  "keywords": [],
   "author": {
-    "name": "",
-    "email": "",
-    "url": ""
+    "name": "Maurici Ferreira Junior"
   },
-  "contributors": [],
   "scripts": {
     "dev": "npx parcel --port 8000 index.html",
     "test": ""

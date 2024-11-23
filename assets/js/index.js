@@ -1,5 +1,7 @@
 import fetchImages from "./fetchApis";
 
+let { API_BASE_URL } = process.env;
+
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
 const captionText = document.getElementById("caption");
@@ -8,29 +10,26 @@ modal.style.display = "none";
 
 const imageGrid = document.querySelector(".image-grid");
 
-// Função para buscar e exibir os dados do endpoint
 async function displayImages() {
   const data = await fetchImages();
     try {
         const postsList = data.map(item => {
           return `
-            <article data-description="${item.descricao}">
+            <article data-description="${item.description}">
               <figure>
-                <img src="${item.imgUrl}" alt="${item.alt}" />
+                <img src="${process.env.API_BASE_URL}/${item.imageUrl}" alt="${item.alt}" />
               </figure>
             </article>
           `
         }).join('');
         imageGrid.insertAdjacentHTML('beforeend', postsList)
 
-        // Adicionando eventos de clique para cada imagem carregada
         addImageClickEvents();
     } catch (error) {
-        console.error("Erro ao popular página", error);
+        console.error("Error displaying images:", error);
     }
 }
 
-// Função para adicionar os eventos de clique às imagens
 function addImageClickEvents() {
     const images = document.querySelectorAll(".image-grid img");
     images.forEach(img => {
@@ -48,17 +47,14 @@ function addImageClickEvents() {
     });
 }
 
-// Evento de fechar o modal
 closeBtn.addEventListener("click", function () {
     modal.style.display = "none";
 });
 
-// Fechar o modal clicando fora dele
 window.addEventListener("click", function (event) {
     if (event.target === modal) {
         modal.style.display = "none";
     }
 });
 
-// Chamar a função para buscar e exibir as imagens ao carregar a página
 document.addEventListener("DOMContentLoaded", displayImages);
